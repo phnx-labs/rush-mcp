@@ -1,6 +1,6 @@
 {
   "name": "rush",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "title": "Rush",
   "description": "Hand Rush a task: an agent does the work in its own cloud computer and returns a pull request, a report, files or an answer, with a record of what it did.",
   "summary": "Hand Rush a task: a cloud agent does the work and returns a PR, report, files or answer.",
