@@ -20,6 +20,10 @@ const files: Record<string, unknown> = {
   },
   ".codex-plugin/plugin.json": { ...identity, interface: ui, skills: "./skills/", mcpServers: "./.mcp.json" },
   ".mcp.json": mcp,
+  "mcp.json": {
+    $schema: "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+    mcpServers: { [name]: { type: "streamable-http", url } },
+  },
   "plugin.json": {
     $schema: "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
     ...identity,

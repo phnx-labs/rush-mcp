@@ -7,4 +7,4 @@ https://api.phoenix.so/mcp, which signs people in with OAuth 2.1 (dynamic
 client registration and PKCE). It never asks for an API key in chat.
 
 Report a vulnerability in the plugin or the service privately to
-support@getrush.ai. Do not open a public issue for it.
+contact@phoenix.so. Do not open a public issue for it.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 (2026-11-05)
+
+- New skills: `fix-a-bug`, `run-in-parallel` and `save-an-agent`.
+- Skills explain each refusal a person can fix (trial used, repository not reachable, account not connected) with the console page that fixes it, and pass `connect_account` its required `type`.
+- `hand-off-a-task` finds work started in an earlier conversation with `list_sessions`.
+- `mcp.json` for Cursor and other Agent Plugins clients.
+- Support moves to this repository's issues; the contact email is contact@phoenix.so.
+
 ## 1.1.0 (2026-11-03)
 
 - The MCP registry entry (`server.json`) points at `https://api.phoenix.so/mcp` and signs in with OAuth; it no longer asks for an API key header.

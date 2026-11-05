@@ -1,11 +1,11 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "rush",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Hand Rush a task: an agent does the work in its own cloud computer and returns a pull request, a report, files or an answer, with a record of what it did.",
   "author": {
     "name": "Phoenix Horizon, Inc.",
-    "email": "support@getrush.ai",
+    "email": "contact@phoenix.so",
     "url": "https://getrush.ai"
   },
   "homepage": "https://getrush.ai/docs/concepts/mcp-server/",
@@ -37,7 +37,7 @@
           "Connect an account a task needs through a sign-in link you open yourself"
         ],
         "websiteURL": "https://getrush.ai",
-        "supportURL": "https://getrush.ai/support/",
+        "supportURL": "https://github.com/phnx-labs/rush-mcp/issues",
         "privacyPolicyURL": "https://getrush.ai/legal/privacy/",
         "termsOfServiceURL": "https://getrush.ai/legal/terms/",
         "defaultPrompt": [

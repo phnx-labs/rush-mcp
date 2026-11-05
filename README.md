@@ -8,11 +8,16 @@ with dynamic registration and PKCE, so no API key is needed. Runs use the
 Claude or ChatGPT account you connected to Rush, or Rush's models within the
 free trial.
 
-This plugin adds three skills on top of the server's tools:
+This plugin adds six skills on top of the server's tools:
 
 - `get-started`: your first task, from asking to the result, in three turns.
 - `hand-off-a-task`: write a task, start it, wait, read the result, continue or stop it.
-- `review-a-pr`: a review of one GitHub pull request, with each finding's file and line.
+- `fix-a-bug`: reproduce a bug, fix its cause and open a pull request with a test.
+- `review-a-pr`: a review of one pull request, each finding with its file and line.
+- `run-in-parallel`: many independent tasks at once, one cloud computer each.
+- `save-an-agent`: a reusable agent with standing instructions, or one from Community.
+
+The plugin talks to one host, `api.phoenix.so`.
 
 ## Claude Code
 
@@ -66,7 +71,7 @@ Use an API key from the console's Developers page instead of signing in:
 
 ## Help
 
-Email support@getrush.ai. Privacy: https://getrush.ai/legal/privacy/.
+Email contact@phoenix.so. Privacy: https://getrush.ai/legal/privacy/.
 Terms: https://getrush.ai/legal/terms/.
 
 ## Maintaining this repository
