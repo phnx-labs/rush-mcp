@@ -15,8 +15,10 @@ ask for a password, token or API key in chat, and never invent a result.
    and hands back the result with a record of what it did. Ask one question:
    "What would you like done? It can be on one of your repositories, or need
    none." If the list is empty, add that a task on code needs the Rush GitHub
-   App on that repository:
-   https://cloud.getrush.ai/console/settings/?section=connections
+   App on that repository
+   (https://cloud.getrush.ai/console/settings/?section=connections), or, for a
+   gitlab.com project, a GitLab sign-in (`connect_account` with `type` `app`
+   and `name` `gitlab`).
 2. **Start it.** Confirm the repository against the list when the task names
    one. Then follow the `hand-off-a-task` skill: write the task with everything
    the agent needs, start it, say it takes a few minutes, and wait until it

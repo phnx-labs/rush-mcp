@@ -22,8 +22,9 @@ description: Have a Rush cloud agent review a GitHub pull request and report wha
 4. **Report.** From `get_session`: the findings, most serious first, each with
    its file and line, and which tests ran. Do not add findings of your own to
    Rush's list. On `needs_review` or `failed`, say so with the reason.
-5. **Offer the next step.** Ask Rush follow-up questions with
-   `send_session_message` in the same session, or have it make the fixes:
-   `send_session_message` with "Fix findings 1 and 3 and push to the PR's
-   branch", or a new session that opens its own pull request. Push or post
-   comments only when the person asks.
+5. **Offer the next step.** Ask follow-up questions with
+   `send_session_message` in the same session; a review session reads the
+   code but cannot push. To make the fixes, start a new session with the
+   findings in its `task` and the PR's branch (`/tree/<branch>`) as `repo`
+   for a branch in the same repository; for a PR from a fork, the new session
+   opens its own pull request. Start it only when the person asks.
