@@ -41,7 +41,7 @@ this plugin.
    **Expected:** a pull request with a test that failed before the fix; the PR is left open for the person to merge.
 5. **Prompt:** "Set up a Rush agent I can reuse every Monday that writes release notes from last week's merged pull requests."
    **Tools:** `list_agents`, `list_connections`, `create_agent`.
-   **Expected:** a saved agent with standing instructions that forbid pushing; no session is started.
+   **Expected:** a saved agent whose standing instructions carry the person's limits (here, never push); no session is started.
 
 ### Should not use Rush
 

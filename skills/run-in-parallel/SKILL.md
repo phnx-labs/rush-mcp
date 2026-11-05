@@ -11,9 +11,10 @@ independent work runs side by side instead of in a queue.
 1. **Split the work.** Make one task per item that can be done without the
    others' results. Each task is self-contained: the goal, its inputs, and the
    same definition of done for every item ("open one pull request and do not
-   merge it", "write findings.md"). Work that touches the same files belongs in
-   one task, not several racing pull requests. Show the person the list and
-   confirm before starting more than five.
+   merge it", "write findings.md"; leave out "do not merge" only when the
+   person asked for merges). Work that touches the same files belongs in one
+   task, not several racing pull requests. Show the person the list and confirm
+   before starting more than five.
 2. **Start them.** Call `create_session` once per item, each with its own fresh
    UUID, written yourself, as `request_id`, and the same `repo`, `project` or
    `agent` where they share one. Keep a table of item to session id. Sessions
