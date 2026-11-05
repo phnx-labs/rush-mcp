@@ -23,8 +23,8 @@ description: Have a Rush cloud agent review a GitHub pull request and report wha
    its file and line, and which tests ran. Do not add findings of your own to
    Rush's list. On `needs_review` or `failed`, say so with the reason.
 5. **Offer the next step.** Ask follow-up questions with
-   `send_session_message` in the same session; a review session reads the
-   code but cannot push. To make the fixes, start a new session with the
+   `send_session_message` in the same session; its task told it not to
+   push. To make the fixes, start a new session with the
    findings in its `task` and the PR's branch (`/tree/<branch>`) as `repo`
    for a branch in the same repository; for a PR from a fork, the new session
    opens its own pull request. Start it only when the person asks.
