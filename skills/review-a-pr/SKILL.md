@@ -5,25 +5,25 @@ description: Have a Rush cloud agent review a GitHub pull request and report wha
 
 # Review a pull request with Rush
 
-Connect the hosted Rush MCP server at `https://api.phoenix.so/mcp` and sign in
-with the person's Rush account before using these tools. Never ask for a
-password, token or API key in chat. If sign-in is required, explain how to
-connect and stop; do not invent findings.
-
-1. Get the pull request URL. If the person names only a repository, ask which
-   PR. Call `list_repositories`; if the repository is not listed, say the Rush
-   GitHub App does not reach it yet and stop.
-2. Call `create_session` with the PR URL as `repo`, a fresh UUID as
-   `request_id`, and a `task` that says what to review and how to answer, for
-   example: "Review this pull request. Read the diff and the code around it,
-   run the tests if the repo has them, and list each problem with the file and
-   line, why it matters, and the change you would make. Do not push commits or
-   post comments." Add anything the person asked to focus on.
-3. Call `wait_for_sessions` with the id until it settles; a review takes
-   minutes.
-4. Report from `get_session`: the findings, most serious first, each with its
-   file and line. Say plainly when the review found nothing. On
-   `needs_review` or `failed`, say so with the reason.
-5. Offer next steps: ask follow-up questions with `send_session_message`, or
-   start a separate session to make the fixes, which opens its own pull
-   request. Only post comments or push changes when the person asks.
+1. **Find the pull request.** Get its URL. If the person names only a
+   repository, ask which PR. If `list_repositories` does not list the
+   repository, say the Rush GitHub App does not reach it yet
+   (https://cloud.getrush.ai/console/settings/?section=connections) and stop.
+2. **Start the review.** Call `create_session` with the PR URL as `repo`, a
+   fresh UUID as `request_id`, and a `task` like: "Review this pull request.
+   Read the diff and the code it touches, run the tests and linters the repo
+   has, and list each problem with its file and line, why it matters and the
+   change you would make, most serious first. Say plainly if you find nothing.
+   Do not push commits or post comments." Add anything the person asked to
+   focus on, such as security or performance. To review several PRs, start one
+   session each.
+3. **Wait.** A review takes a few minutes: call `wait_for_sessions` with
+   `timeout_seconds: 50` until it settles.
+4. **Report.** From `get_session`: the findings, most serious first, each with
+   its file and line, and which tests ran. Do not add findings of your own to
+   Rush's list. On `needs_review` or `failed`, say so with the reason.
+5. **Offer the next step.** Ask Rush follow-up questions with
+   `send_session_message` in the same session, or have it make the fixes:
+   `send_session_message` with "Fix findings 1 and 3 and push to the PR's
+   branch", or a new session that opens its own pull request. Push or post
+   comments only when the person asks.
