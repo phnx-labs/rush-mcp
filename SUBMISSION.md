@@ -23,7 +23,8 @@ same thing. Listing text comes from `source/plugin.json`.
 ## Test cases (OpenAI asks for exactly five and three)
 
 Each positive case passed in a real run on 2026-11-05 through Claude Code with
-this plugin.
+this plugin. Cases 3 and 4 name the reviewer account's test repository; fill in
+its name and an open pull request in it before submitting.
 
 ### Should use Rush
 
@@ -33,10 +34,10 @@ this plugin.
 2. **Prompt:** "Use Rush to research the latest stable release and release date of Node.js, Go and Rust at the same time, then give me a table."
    **Tools:** `create_session` three times, `wait_for_sessions` with `until: any`.
    **Expected:** three sessions run side by side; a table with one row per language and the official source for each.
-3. **Prompt:** "Ask Rush to review https://github.com/bisma-nawazz/code-forge-agents/pull/1 before I merge it."
+3. **Prompt:** "Ask Rush to review https://github.com/<test-repo>/pull/<n> before I merge it."
    **Tools:** `list_repositories`, `create_session` with the PR URL as `repo`, `wait_for_sessions`.
    **Expected:** findings ranked by severity, each with file and line; no commits or comments on the PR.
-4. **Prompt:** "textstats.median([1, 2, 3, 4]) returns 3 but should return 2.5 in bisma-nawazz/code-forge-agents. Have Rush fix it."
+4. **Prompt:** "textstats.median([1, 2, 3, 4]) returns 3 but should return 2.5 in <test-repo>. Have Rush fix it."
    **Tools:** `create_session` with the repository as `repo`, `wait_for_sessions`, `get_session`.
    **Expected:** a pull request with a test that failed before the fix; the PR is left open for the person to merge.
 5. **Prompt:** "Set up a Rush agent I can reuse every Monday that writes release notes from last week's merged pull requests and never pushes anything."
