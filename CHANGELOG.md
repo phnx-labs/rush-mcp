@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Code tasks say "do not merge" unless the person asked for a merge; a test run's agent merged its own fix because its environment had a merge rule.
+- Skills ask for a UUID written inline, so no client prompts for a shell command.
+- `LISTINGS.md` tracks each directory; `SUBMISSION.md` holds the listing fields and the review test cases.
+
 ## 1.2.0 (2026-11-05)
 
 - New skills: `fix-a-bug`, `run-in-parallel` and `save-an-agent`.
