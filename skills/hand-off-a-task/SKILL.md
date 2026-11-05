@@ -1,6 +1,6 @@
 ---
 name: hand-off-a-task
-description: Hand a task to a Rush cloud agent and bring back the result. Use when someone wants work done off their machine or in the background (fix a bug, write tests, upgrade a dependency, research and write a report, investigate an incident), wants several tasks run at once, or asks what happened to a task Rush ran earlier.
+description: Hand a task to a Rush cloud agent and bring back the result. Use when someone wants work done off their machine or in the background (write tests, upgrade a dependency, research and write a report, investigate an incident), or asks what happened to a task Rush ran earlier.
 ---
 
 # Hand off a task to Rush
@@ -56,7 +56,6 @@ For these, tell the person the fix in one line:
 
 | Code | Fix |
 |---|---|
-| `TOKEN_LIMIT_REACHED` | The free trial of Rush's models is used. Connect a Claude or ChatGPT account at https://cloud.getrush.ai/console/settings/?section=accounts |
-| `CREDITS_EXHAUSTED`, `SPEND_CAP_REACHED`, `PAYMENT_METHOD_REQUIRED`, `COMPUTE_LIMIT_REACHED`, `WEEKLY_COMPUTE_LIMIT_REACHED` | Relay the message; billing is at https://cloud.getrush.ai/console/settings/?section=billing |
+| `TOKEN_LIMIT_REACHED`, `CREDITS_EXHAUSTED`, `SPEND_CAP_REACHED`, `PAYMENT_METHOD_REQUIRED`, `COMPUTE_LIMIT_REACHED`, `WEEKLY_COMPUTE_LIMIT_REACHED` | Relay the message; it names the fix. Model accounts are at https://cloud.getrush.ai/console/settings/?section=accounts and billing at https://cloud.getrush.ai/console/settings/?section=billing |
 | `RESOURCE_NOT_ACCESSIBLE` | Rush's GitHub App does not reach that repository. Add it at https://cloud.getrush.ai/console/settings/?section=connections, or run without `repo`. |
-| `CONNECTION_NOT_READY` | Call `connect_account` with `type` `app` (gmail, linear, slack, …) or `mcp` (with its `url`), and `name`. Give the `authorize_url` to the person to open in their own browser; never open or fetch it. It works once, for 10 minutes. Start the session again once `list_connections` shows it connected. |
+| `CONNECTION_NOT_READY` | Call `connect_account` with `type` `app` (gmail, linear, slack, …) or `mcp` (with its `url`), and `name`; for an agent made from a template, also `agent`. A gitlab.com project needs `name` `gitlab`. Give the `authorize_url` to the person to open in their own browser; never open or fetch it. It works once, for 10 minutes. Start the session again once `list_connections` shows it connected. |

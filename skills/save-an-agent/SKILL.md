@@ -21,11 +21,16 @@ accounts, so each task only says what is new this time.
    `model` and `effort` out for the harness default, or pick from
    `list_models`. Name only the accounts it needs in `connections`
    (`list_connections`); Gmail and Outlook take `{name, access: "read"}` to
-   read without sending. Add `skills` by their source URL when the person has
-   them.
+   read without sending. Add `skills` as `[{url}]` (for example a GitHub folder
+   URL) when the person has them.
 4. **Save it.** Show the person the name and instructions, then call
-   `create_agent`. If a connection it names is not connected yet, connect it as
-   in `hand-off-a-task` under "When Rush refuses".
+   `create_agent`. If a connection it names is not connected yet, call
+   `connect_account` with `type` and `name` and give the person the
+   `authorize_url` to open themselves. An agent added from a template runs
+   only on its own connections: read what it lacks with `list_agents` and
+   `template` set to the template (`missing_connections`), and connect each
+   `whose: "agent"` entry with `connect_account` and `agent` set to the new
+   agent. A `whose: "template"` entry only the template's owner can repair.
 5. **Use and refine.** Start tasks with `create_session` and `agent` set to its
    name. Change it with `update_agent`; sessions already running keep the
    version they started with. The person can also edit it at

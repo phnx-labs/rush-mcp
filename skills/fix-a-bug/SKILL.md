@@ -19,8 +19,8 @@ description: Have a Rush cloud agent reproduce a bug, fix it and open a pull req
 3. **Wait** with `wait_for_sessions` (`timeout_seconds: 50`) until it settles;
    a fix takes several minutes.
 4. **Report.** From `get_session`: the cause in a sentence or two, the pull
-   request link, and whether the new test failed before the fix and passes
-   after. `get_session_changes` with `include_diff` shows the change when the
+   request link (a merge request on gitlab.com), and whether the new test
+   failed before the fix and passes after. `get_session_changes` with `include_diff` shows the change when the
    person wants to read it here. If it could not reproduce the bug, give what
    it tried and ask for the missing detail.
 5. **Iterate in the same session.** Review comments or a red check go back
