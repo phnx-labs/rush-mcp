@@ -39,7 +39,7 @@ this plugin.
 4. **Prompt:** "textstats.median([1, 2, 3, 4]) returns 3 but should return 2.5 in bisma-nawazz/code-forge-agents. Have Rush fix it."
    **Tools:** `create_session` with the repository as `repo`, `wait_for_sessions`, `get_session`.
    **Expected:** a pull request with a test that failed before the fix; the PR is left open for the person to merge.
-5. **Prompt:** "Set up a Rush agent I can reuse every Monday that writes release notes from last week's merged pull requests."
+5. **Prompt:** "Set up a Rush agent I can reuse every Monday that writes release notes from last week's merged pull requests and never pushes anything."
    **Tools:** `list_agents`, `list_connections`, `create_agent`.
    **Expected:** a saved agent whose standing instructions carry the person's limits (here, never push); no session is started.
 
