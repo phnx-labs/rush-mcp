@@ -10,14 +10,15 @@ independent work runs side by side instead of in a queue.
 
 1. **Split the work.** Make one task per item that can be done without the
    others' results. Each task is self-contained: the goal, its inputs, and the
-   same definition of done for every item ("open one pull request", "write
-   findings.md"). Work that touches the same files belongs in one task, not
-   several racing pull requests. Show the person the list and confirm before
-   starting more than five.
+   same definition of done for every item ("open one pull request and do not
+   merge it", "write findings.md"). Work that touches the same files belongs in
+   one task, not several racing pull requests. Show the person the list and
+   confirm before starting more than five.
 2. **Start them.** Call `create_session` once per item, each with its own fresh
-   UUID as `request_id`, and the same `repo`, `project` or `agent` where they
-   share one. Keep a table of item to session id. Sessions past the account's
-   runs-at-once limit start `queued` and begin as others finish.
+   UUID, written yourself, as `request_id`, and the same `repo`, `project` or
+   `agent` where they share one. Keep a table of item to session id. Sessions
+   past the account's runs-at-once limit start `queued` and begin as others
+   finish.
 3. **Gather.** Call `wait_for_sessions` with all the ids (up to 20 per call),
    `until: "any"` and `timeout_seconds: 50`. Report each session as it
    settles, then call again with the ones still running.
@@ -28,7 +29,8 @@ independent work runs side by side instead of in a queue.
 
 **Several approaches to one problem.** Start one session per approach with the
 same task and the approach named in it, then compare the results side by side:
-what each changed (`get_session_changes`), whether tests pass, and the trade-off.
-Let the person pick; offer `cancel_session` for the others only when they ask.
+what each changed (`get_session_changes`), whether tests pass, and the
+trade-off. Let the person pick; offer `cancel_session` for the others only when
+they ask.
 
 Refusals: see `hand-off-a-task` under "When Rush refuses".

@@ -13,7 +13,9 @@ chat, and never report a result Rush did not return.
 1. **Write the task.** The session knows nothing from this conversation. Put in
    `task` the goal, the files, errors, links and decisions that matter, and
    what done looks like: "open a pull request", "write the report as
-   report.md", "answer in a few sentences". To build on a finished session,
+   report.md", "answer in a few sentences". For code, add "do not merge" unless
+   the person asked for a merge; the agent may otherwise follow merge rules of
+   its own. To build on a finished session,
    pass its id as `continue_from`; its answer goes at the top of the new task.
 2. **Pick where it runs.** For code, pass `repo`: a GitHub repository, branch
    (`/tree/<branch>`) or pull request URL from `list_repositories`, or a
@@ -23,9 +25,10 @@ chat, and never report a result Rush did not return.
    (`list_agents`), and the accounts the task may use in `connections`
    (`list_connections`). Leave out what the task does not need; with no
    `agent`, Claude Code does the work.
-3. **Start it.** Call `create_session` once, with a fresh UUID as `request_id`.
-   If the call errors and you retry, send the same `request_id` so only one
-   session starts. For independent tasks, start one session each.
+3. **Start it.** Call `create_session` once, with a fresh UUID you write
+   yourself as `request_id` (no shell command needed). If the call errors and
+   you retry, send the same `request_id` so only one session starts. For
+   independent tasks, start one session each.
 4. **Wait.** Tell the person it is running, then call `wait_for_sessions` with
    every id and `timeout_seconds: 50`, again until `settled` is true. A session
    past the runs-at-once limit starts `queued`; keep waiting. With several,
