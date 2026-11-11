@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- The marketplace is named `phoenix`, so the install id is `rush@phoenix` (Rush by Phoenix) instead of `rush@rush`. The plugin keeps the name `rush`, so its skills stay `rush:<skill>`. Someone who added the marketplace as `rush` removes it (`claude plugin marketplace remove rush`) and adds it again.
+
 - The Claude plugin manifest carries the fields Anthropic's directory reads: `displayName`, `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl` and `termsOfServiceUrl`. The marketplace entry has `displayName`, `category` and `tags`, and its owner an email and URL.
 - Logos and the registry icon are the gold Phoenix (`rush/BRAND.md` → Logos); the registry icon URL had gone 404 when getrush.ai retired the bird.
 - README: Claude Code's one-command install, and Codex's plugin install with its skills.

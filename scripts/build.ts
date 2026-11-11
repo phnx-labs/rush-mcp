@@ -5,7 +5,7 @@ import { dirname, join, resolve } from "node:path";
 
 const root = resolve(import.meta.dir, "..");
 const source = JSON.parse(await readFile(join(root, "source/plugin.json"), "utf8"));
-const { name, version, title, description, summary, url, registryName, repository, author, homepage, documentation, icon, keywords, interface: ui, onboardingSkill } = source;
+const { name, marketplace, version, title, description, summary, url, registryName, repository, author, homepage, documentation, icon, keywords, interface: ui, onboardingSkill } = source;
 
 const identity = { name, version, description, author, homepage, keywords, license: "MIT", repository };
 const mcp = { mcpServers: { [name]: { type: "http", url } } };
@@ -21,7 +21,7 @@ const files: Record<string, unknown> = {
     termsOfServiceUrl: ui.termsOfServiceURL,
   },
   ".claude-plugin/marketplace.json": {
-    name,
+    name: marketplace,
     owner: { name: author.name, email: author.email, url: author.url },
     description,
     plugins: [{ name, displayName: ui.displayName, source: "./", description, category: "development", tags: keywords }],
