@@ -18,5 +18,10 @@
   ],
   "license": "MIT",
   "repository": "https://github.com/phnx-labs/rush-mcp",
-  "privacyPolicyUrl": "https://getrush.ai/legal/privacy/"
+  "displayName": "Rush",
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://getrush.ai/docs/concepts/mcp-server/",
+  "supportUrl": "https://github.com/phnx-labs/rush-mcp/issues",
+  "privacyPolicyUrl": "https://getrush.ai/legal/privacy/",
+  "termsOfServiceUrl": "https://getrush.ai/legal/terms/"
 }

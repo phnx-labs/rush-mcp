@@ -1,14 +1,26 @@
 {
   "name": "rush",
   "owner": {
-    "name": "Phoenix Horizon, Inc."
+    "name": "Phoenix Horizon, Inc.",
+    "email": "contact@phoenix.so",
+    "url": "https://getrush.ai"
   },
   "description": "Hand Rush a task: an agent does the work in its own cloud computer and returns a pull request, a report, files or an answer, with a record of what it did.",
   "plugins": [
     {
       "name": "rush",
+      "displayName": "Rush",
       "source": "./",
-      "description": "Hand Rush a task: an agent does the work in its own cloud computer and returns a pull request, a report, files or an answer, with a record of what it did."
+      "description": "Hand Rush a task: an agent does the work in its own cloud computer and returns a pull request, a report, files or an answer, with a record of what it did.",
+      "category": "development",
+      "tags": [
+        "agents",
+        "cloud",
+        "automation",
+        "code review",
+        "pull requests",
+        "sandbox"
+      ]
     }
   ]
 }

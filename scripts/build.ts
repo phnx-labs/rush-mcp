@@ -5,18 +5,26 @@ import { dirname, join, resolve } from "node:path";
 
 const root = resolve(import.meta.dir, "..");
 const source = JSON.parse(await readFile(join(root, "source/plugin.json"), "utf8"));
-const { name, version, title, description, summary, url, registryName, repository, author, homepage, icon, keywords, interface: ui, onboardingSkill } = source;
+const { name, version, title, description, summary, url, registryName, repository, author, homepage, documentation, icon, keywords, interface: ui, onboardingSkill } = source;
 
 const identity = { name, version, description, author, homepage, keywords, license: "MIT", repository };
 const mcp = { mcpServers: { [name]: { type: "http", url } } };
 
 const files: Record<string, unknown> = {
-  ".claude-plugin/plugin.json": { ...identity, privacyPolicyUrl: ui.privacyPolicyURL },
+  ".claude-plugin/plugin.json": {
+    ...identity,
+    displayName: ui.displayName,
+    icon: ui.logo,
+    documentationUrl: documentation,
+    supportUrl: ui.supportURL,
+    privacyPolicyUrl: ui.privacyPolicyURL,
+    termsOfServiceUrl: ui.termsOfServiceURL,
+  },
   ".claude-plugin/marketplace.json": {
     name,
-    owner: { name: author.name },
+    owner: { name: author.name, email: author.email, url: author.url },
     description,
-    plugins: [{ name, source: "./", description }],
+    plugins: [{ name, displayName: ui.displayName, source: "./", description, category: "development", tags: keywords }],
   },
   ".codex-plugin/plugin.json": { ...identity, interface: ui, skills: "./skills/", mcpServers: "./.mcp.json" },
   ".mcp.json": mcp,

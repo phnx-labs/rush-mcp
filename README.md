@@ -22,11 +22,13 @@ The plugin talks to one host, `api.phoenix.so`.
 ## Claude Code
 
 ```sh
-claude plugin marketplace add phnx-labs/rush-mcp
-claude plugin install rush@rush
+claude plugin install rush --marketplace phnx-labs/rush-mcp
 ```
 
-Restart Claude Code, open `/mcp`, and sign in to Rush. For the tools alone:
+On Claude Code before 2.1.292, add the marketplace first:
+`claude plugin marketplace add phnx-labs/rush-mcp`, then
+`claude plugin install rush@rush`. Restart Claude Code, open `/mcp`, and sign
+in to Rush. For the tools alone:
 
 ```sh
 claude mcp add --transport http rush https://api.phoenix.so/mcp
@@ -34,10 +36,16 @@ claude mcp add --transport http rush https://api.phoenix.so/mcp
 
 ## Codex
 
+The plugin, with its skills:
+
 ```sh
-codex mcp add rush --url https://api.phoenix.so/mcp
+codex plugin marketplace add phnx-labs/rush-mcp
+codex plugin add rush@rush
 codex mcp login rush
 ```
+
+For the tools alone: `codex mcp add rush --url https://api.phoenix.so/mcp`, then
+`codex mcp login rush`.
 
 ## claude.ai and ChatGPT
 
