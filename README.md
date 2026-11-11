@@ -22,12 +22,12 @@ The plugin talks to one host, `api.phoenix.so`.
 ## Claude Code
 
 ```sh
-claude plugin install rush --marketplace phnx-labs/rush-mcp
+claude plugin install rush-cloud --marketplace phnx-labs/rush-mcp
 ```
 
 On Claude Code before 2.1.292, add the marketplace first:
 `claude plugin marketplace add phnx-labs/rush-mcp`, then
-`claude plugin install rush@rush`. Restart Claude Code, open `/mcp`, and sign
+`claude plugin install rush-cloud@phoenix`. Restart Claude Code, open `/mcp`, and sign
 in to Rush. For the tools alone:
 
 ```sh
@@ -40,7 +40,7 @@ The plugin, with its skills:
 
 ```sh
 codex plugin marketplace add phnx-labs/rush-mcp
-codex plugin add rush@rush
+codex plugin add rush-cloud@phoenix
 codex mcp login rush
 ```
 
