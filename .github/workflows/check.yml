@@ -1,0 +1,16 @@
+name: check
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun scripts/build.ts --check
+      - run: npx -y @anthropic-ai/claude-code@2.1.307 plugin validate --strict .
+      - run: npx -y @anthropic-ai/claude-code@2.1.307 plugin validate --strict .claude-plugin/marketplace.json

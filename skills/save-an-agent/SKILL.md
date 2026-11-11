@@ -22,7 +22,9 @@ accounts, so each task only says what is new this time.
    `list_models`. Name only the accounts it needs in `connections`
    (`list_connections`); Gmail and Outlook take `{name, access: "read"}` to
    read without sending. Add `skills` as `[{url}]` (for example a GitHub folder
-   URL) when the person has them.
+   URL) when the person has them. GitHub is not a connection: the repositories the
+   Rush GitHub App reaches are in `list_repositories`, and each task names its
+   `repo`.
 4. **Save it.** Show the person the name and instructions, then call
    `create_agent`. If a connection it names is not connected yet, call
    `connect_account` with `type` and `name` and give the person the

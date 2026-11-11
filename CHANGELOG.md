@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- The Claude plugin manifest carries the fields Anthropic's directory reads: `displayName`, `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl` and `termsOfServiceUrl`. The marketplace entry has `displayName`, `category` and `tags`, and its owner an email and URL.
+- Logos and the registry icon are the gold Phoenix (`rush/BRAND.md` → Logos); the registry icon URL had gone 404 when getrush.ai retired the bird.
+- README: Claude Code's one-command install, and Codex's plugin install with its skills.
+- `save-an-agent`: GitHub is reached through `list_repositories`, not `list_connections`; a test run told a person they had no GitHub connection.
+- CI runs `bun scripts/build.ts --check` and `claude plugin validate --strict` on every pull request.
+
 - Code tasks say "do not merge" unless the person asked for a merge; a test run's agent merged its own fix because its environment had a merge rule.
 - Skills ask for a UUID written inline, so no client prompts for a shell command.
 - `LISTINGS.md` tracks each directory; `SUBMISSION.md` holds the listing fields and the review test cases.

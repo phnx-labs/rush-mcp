@@ -13,7 +13,8 @@
     "url": "https://getrush.ai"
   },
   "homepage": "https://getrush.ai/docs/concepts/mcp-server/",
-  "icon": "https://getrush.ai/brand/favicons/perched-tilt-up-512.png",
+  "icon": "https://getrush.ai/brand/phoenix-logo.png",
+  "documentation": "https://getrush.ai/docs/concepts/mcp-server/",
   "keywords": ["agents", "cloud", "automation", "code review", "pull requests", "sandbox"],
   "interface": {
     "displayName": "Rush",
