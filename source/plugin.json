@@ -1,5 +1,6 @@
 {
   "name": "rush",
+  "plugin": "rush-cloud",
   "marketplace": "phoenix",
   "version": "1.2.0",
   "title": "Rush",
