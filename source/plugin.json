@@ -7,7 +7,7 @@
   "description": "Hand Rush a task: an agent does the work in its own cloud computer and returns a pull request, a report, files or an answer, with a record of what it did.",
   "summary": "Hand Rush a task: a cloud agent does the work and returns a PR, report, files or answer.",
   "url": "https://api.phoenix.so/mcp",
-  "registryName": "ai.getrush/rush",
+  "registryName": "so.phoenix/rush",
   "repository": "https://github.com/phnx-labs/rush-mcp",
   "author": {
     "name": "Phoenix Horizon, Inc.",

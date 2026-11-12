@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "ai.getrush/rush",
+  "name": "so.phoenix/rush",
   "title": "Rush",
   "description": "Hand Rush a task: a cloud agent does the work and returns a PR, report, files or answer.",
   "version": "1.2.0",

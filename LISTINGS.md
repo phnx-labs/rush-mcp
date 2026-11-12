@@ -4,13 +4,13 @@ Where the Rush MCP server (`https://api.phoenix.so/mcp`) and this plugin are
 listed, and what each is waiting on. Update a row when its status changes.
 Submission fields and review test cases are in [SUBMISSION.md](SUBMISSION.md).
 
-Last checked: 2026-11-11.
+Last checked: 2026-11-12.
 
 ## Live
 
 | Directory | Listing | Notes |
 |---|---|---|
-| Official MCP Registry | [`ai.getrush/rush`](https://registry.modelcontextprotocol.io/v0/servers?search=getrush) | Serves 1.0.0: `api.prix.dev/mcp` with an API key header. `server.json` here (1.2.0) has `api.phoenix.so` and sign-in; publishing needs the `ai.getrush` namespace key. |
+| Official MCP Registry | [`so.phoenix/rush`](https://registry.modelcontextprotocol.io/v0/servers?search=so.phoenix/rush) | Published from `server.json` with `mcp-publisher login http --domain phoenix.so` (key in the `mcp-registry` secrets bundle; public half at `https://phoenix.so/.well-known/mcp-registry-auth`). Company namespace, product name (owner, 2026-11-12). The old `ai.getrush/rush` 1.0.0 (`api.prix.dev`, API key header) is to be marked deprecated. |
 
 ## Ready to submit (the repo is public, issues on, as of 2026-11-11)
 
@@ -29,5 +29,5 @@ public repo; submit Rush to them after the four above.
 
 ## Checking status
 
-- Registry: `curl -s 'https://registry.modelcontextprotocol.io/v0/servers?search=getrush'`
+- Registry: `curl -s 'https://registry.modelcontextprotocol.io/v0/servers?search=so.phoenix/rush'`
 - Server and sign-in: `curl -s https://api.phoenix.so/.well-known/mcp/server-card.json` and `/.well-known/oauth-authorization-server`
