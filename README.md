@@ -54,7 +54,9 @@ asked.
 
 ## Cursor
 
-Add to `.cursor/mcp.json`, then sign in from MCP settings:
+This repository is a Cursor plugin (`.cursor-plugin/plugin.json`) with the
+skills. For the tools alone, add to `.cursor/mcp.json`, then sign in from MCP
+settings:
 
 ```json
 {"mcpServers":{"rush":{"url":"https://api.phoenix.so/mcp"}}}
