@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Cursor manifest `.cursor-plugin/plugin.json`, generated from `source/plugin.json` with the logo, skills and server, so a Cursor Marketplace listing shows the Rush logo. It passes Cursor's published schema (`cursor/plugins` `schemas/plugin.schema.json`), which allows only `name` and `email` in `author`.
+- `shortDescription` is "Hand a task to a cloud agent": OpenAI caps it at 30 characters. The long description no longer mentions a free trial, which OpenAI's plugin guidelines do not allow in listing copy.
+- `SUBMISSION.md` gives every test case the description, prompt, tools and expected behavior OpenAI's review form requires, and adds the annotation justifications, release notes, the reviewer account and domain-verification rows, and the sign-in hosts (`cloud.getrush.ai`, `id.phoenix.so`) it had left out.
+
 - The install id is `rush-cloud@phoenix` (plugin `rush-cloud` from the `phoenix` marketplace) instead of `rush@rush`, which read as the same word twice. The skills are now `rush-cloud:<skill>`, and Claude Code names the plugin's tools `mcp__plugin_rush-cloud_rush__*`. The MCP server keeps the name `rush`, so `codex mcp login rush` and a server added on its own (`claude mcp add rush`, Cursor, VS Code) are unchanged. To move off the old name: Claude Code, `claude plugin uninstall rush@rush` and `claude plugin marketplace remove rush`, then install `rush-cloud@phoenix`; Codex, `codex plugin remove rush@rush`, then `codex plugin add rush-cloud@phoenix`; Gemini CLI, `gemini extensions uninstall rush`, then install it again from this repo.
 
 - The Claude plugin manifest carries the fields Anthropic's directory reads: `displayName`, `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl` and `termsOfServiceUrl`. The marketplace entry has `displayName`, `category` and `tags`, and its owner an email and URL.

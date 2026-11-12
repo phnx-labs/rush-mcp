@@ -27,6 +27,7 @@ const files: Record<string, unknown> = {
     plugins: [{ name: plugin, displayName: ui.displayName, source: "./", description, category: "development", tags: keywords }],
   },
   ".codex-plugin/plugin.json": { ...identity, interface: ui, skills: "./skills/", mcpServers: "./.mcp.json" },
+  ".cursor-plugin/plugin.json": { ...identity, author: { name: author.name, email: author.email }, displayName: ui.displayName, logo: ui.logo, skills: "./skills/", mcpServers: "./.mcp.json" },
   ".mcp.json": mcp,
   "mcp.json": {
     $schema: "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",

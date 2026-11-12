@@ -20,8 +20,8 @@
   "repository": "https://github.com/phnx-labs/rush-mcp",
   "interface": {
     "displayName": "Rush",
-    "shortDescription": "Hand a task to an agent in the cloud",
-    "longDescription": "Rush runs an agent on a task in its own cloud computer, with a browser and a terminal, and hands back the result with proof: a pull request with checks, a report, files or an answer, plus every step the agent took.\n\nAsk in plain language to fix a bug, review a pull request, write tests, investigate an incident or produce a report. Rush starts the work at once and keeps going while you do something else; check on it, reply to it, or stop it from the conversation.\n\nA task can work on a connected GitHub repository or on none. It reaches only the accounts and repository you name.\n\nSign in with your Rush account. Runs use the Claude or ChatGPT account you connected to Rush, or Rush's models within the free trial.",
+    "shortDescription": "Hand a task to a cloud agent",
+    "longDescription": "Rush runs an agent on a task in its own cloud computer, with a browser and a terminal, and hands back the result with proof: a pull request with checks, a report, files or an answer, plus every step the agent took.\n\nAsk in plain language to fix a bug, review a pull request, write tests, investigate an incident or produce a report. Rush starts the work at once and keeps going while you do something else; check on it, reply to it, or stop it from the conversation.\n\nA task can work on a connected GitHub repository or on none. It reaches only the accounts and repository you name.\n\nSign in with your Rush account. Runs use the Claude or ChatGPT account you connected to Rush, or Rush's own models.",
     "developerName": "Phoenix Horizon, Inc.",
     "category": "Developer Tools",
     "capabilities": [

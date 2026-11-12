@@ -1,0 +1,24 @@
+{
+  "name": "rush-cloud",
+  "version": "1.2.0",
+  "description": "Hand Rush a task: an agent does the work in its own cloud computer and returns a pull request, a report, files or an answer, with a record of what it did.",
+  "author": {
+    "name": "Phoenix Horizon, Inc.",
+    "email": "contact@phoenix.so"
+  },
+  "homepage": "https://getrush.ai/docs/concepts/mcp-server/",
+  "keywords": [
+    "agents",
+    "cloud",
+    "automation",
+    "code review",
+    "pull requests",
+    "sandbox"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/phnx-labs/rush-mcp",
+  "displayName": "Rush",
+  "logo": "./assets/logo.png",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}
