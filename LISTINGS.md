@@ -11,6 +11,7 @@ Last checked: 2026-11-12 (evening: free directories).
 | Directory | Listing | Notes |
 |---|---|---|
 | Official MCP Registry | [`so.phoenix/rush`](https://registry.modelcontextprotocol.io/v0/servers?search=so.phoenix/rush) | Published from `server.json` with `mcp-publisher login http --domain phoenix.so` (key in the `mcp-registry` secrets bundle; public half at `https://phoenix.so/.well-known/mcp-registry-auth`). Company namespace, product name (owner, 2026-11-12). The old `ai.getrush/rush` 1.0.0 (`api.prix.dev`, API key header) is to be marked deprecated. |
+| awesome-codex-plugins (HOL) | [README entry](https://github.com/hashgraph-online/awesome-codex-plugins#readme) | Merged 2026-11-12 in [PR #710](https://github.com/hashgraph-online/awesome-codex-plugins/pull/710) after the logo dropped under their 50 KB icon limit (#13). The listing can be claimed at hol.org/guard/plugins with a GitHub sign-in. |
 
 ## Ready to submit (the repo is public, issues on, as of 2026-11-11)
 
@@ -27,14 +28,13 @@ Last checked: 2026-11-12 (evening: free directories).
 |---|---|---|
 | Docker MCP registry | [PR #7006](https://github.com/docker/mcp-registry/pull/7006) | Maintainer review. SV Atlas's PR #5531 has waited since 2026-10-09. |
 | mcp.so | [issue #7203](https://github.com/chatmcp/mcpso/issues/7203) | Maintainer response. |
-| awesome-codex-plugins (HOL) | [PR #710](https://github.com/hashgraph-online/awesome-codex-plugins/pull/710) | Their centralized scanner and a maintainer. Local HOL scanner 3.38.0: 99/100 with #11's fixes. |
 | cursor.directory | [plugin page](https://cursor.directory/plugins/rush-2) (slug `rush` was taken) | Their security agent's scan; hidden until it finishes. No logo uploaded (the form takes a file only). |
 
 ## Started, not finished
 
 | Directory | State | Next step |
 |---|---|---|
-| Glama | Already lists [`so.phoenix/rush`](https://glama.ai/mcp/connectors/so.phoenix/rush) from the registry: Unhealthy, unclaimed. Signed in with the getrush.ai Google account, which holds SV Atlas's claim (same token). `https://phoenix.so/.well-known/glama.json` merged in phnx-labs/homepage#46. | Deploy phoenix.so (`scripts/deploy.sh`), press Check HTTP file on the claim panel, then add an OAuth test profile under Admin so health checks find the tools. |
+| Glama | Lists [`so.phoenix/rush`](https://glama.ai/mcp/connectors/so.phoenix/rush) from the registry. Ownership verified 2026-11-12 through `https://phoenix.so/.well-known/glama.json` (getrush.ai Google account). Unhealthy: its health check calls `/mcp` with no credentials and gets 401 `AUTH_FAILED`. | Add a test profile under Admin → Test profile. It needs a standing Rush credential (OAuth sign-in or an API key header); the owner picks which account. |
 | awesome-remote-mcp-servers | Not filed. | Needs a Healthy Glama listing (the Glama row above). |
 | github/awesome-copilot (41k stars) | Install-tested with Copilot CLI 1.0.80 (`Installed 6 skills`). | File the external-plugin issue form. |
 
